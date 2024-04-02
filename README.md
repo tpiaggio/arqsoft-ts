@@ -8,3 +8,7 @@ We take a practical approach throughout the course, and the exercises will be pu
 ### weather-app
 
 Lesson that consisted on explaining the core concepts of Node.js, Express.js, TypeScript with a REST API.
+
+### pipes-filters
+
+Lesson that consisted on explaining the Pipes & Filters pattern.
