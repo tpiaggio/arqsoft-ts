@@ -12,3 +12,7 @@ Lesson that consisted on explaining the core concepts of Node.js, Express.js, Ty
 ### pipes-filters
 
 Lesson that consisted on explaining the Pipes & Filters pattern.
+
+### pipes-filters-excercise
+
+Lesson that consisted on implementing the Pipes & Filters excercise.
