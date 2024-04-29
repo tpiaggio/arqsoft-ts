@@ -16,3 +16,7 @@ Lesson that consisted on explaining the Pipes & Filters pattern.
 ### pipes-filters-excercise
 
 Lesson that consisted on implementing the Pipes & Filters excercise.
+
+### publish-subscribe
+
+Lesson that consisted on explaining the Publish Subscribe pattern using Redis.
