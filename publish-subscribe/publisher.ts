@@ -17,6 +17,8 @@ app.post("/publish", async function (req, res) {
     await client.publish(message.topic, JSON.stringify(message));
   } catch (error) {
     console.log(error);
+  } finally {
+    await client.disconnect();
   }
   res.send("Publishing an Event using Redis");
 });
