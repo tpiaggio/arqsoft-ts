@@ -20,3 +20,7 @@ Lesson that consisted on implementing the Pipes & Filters excercise.
 ### publish-subscribe
 
 Lesson that consisted on explaining the Publish Subscribe pattern using Redis.
+
+### database-mongodb
+
+Lesson that consisted on explaining how to connect to a MongoDB database using Mongoose as an ORM.
