@@ -24,3 +24,7 @@ Lesson that consisted on explaining the Publish Subscribe pattern using Redis.
 ### database-mongodb
 
 Lesson that consisted on explaining how to connect to a MongoDB database using Mongoose as an ORM.
+
+### auth-db
+
+Lesson that consisted on explaining how to integrate JWT and add auth to our app.
