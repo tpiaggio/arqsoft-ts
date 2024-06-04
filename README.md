@@ -13,9 +13,9 @@ Lesson that consisted on explaining the core concepts of Node.js, Express.js, Ty
 
 Lesson that consisted on explaining the Pipes & Filters pattern.
 
-### pipes-filters-excercise
+### pipes-filters-exercise
 
-Lesson that consisted on implementing the Pipes & Filters excercise.
+Lesson that consisted on implementing the Pipes & Filters exercise.
 
 ### publish-subscribe
 
@@ -28,3 +28,7 @@ Lesson that consisted on explaining how to connect to a MongoDB database using M
 ### auth-db
 
 Lesson that consisted on explaining how to integrate JWT and add auth to our app.
+
+### pubsub-db-auth
+
+Lesson that consisted on implementing the Pub/Sub exercise with auth and DB.
