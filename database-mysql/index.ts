@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
+import sequelize from "./db";
 
 import userRoutes from "./routes/user";
 import taskRoutes from "./routes/task";
@@ -9,21 +9,23 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-const port = 3000;
+const port = 4000;
 
 app.use(userRoutes);
 app.use(taskRoutes);
 
-const MONGODB_URI = "mongodb://localhost:27017/arquitectura";
-mongoose
-  .connect(MONGODB_URI)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
+async function testConnection() {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+}
 
 app.listen(port, () => {
   console.log(`Example publisher listening on port ${port}`);
 });
+
+testConnection();
