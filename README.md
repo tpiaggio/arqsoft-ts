@@ -9,6 +9,10 @@ We take a practical approach throughout the course, and the exercises will be pu
 
 Lesson that consisted on explaining the core concepts of Node.js, Express.js, TypeScript with a REST API.
 
+### layered-architecture
+
+Lesson that consisted on showing a layered architecture example with models, controllers, services and repositories.
+
 ### pipes-filters
 
 Lesson that consisted on explaining the Pipes & Filters pattern.
@@ -23,7 +27,11 @@ Lesson that consisted on explaining the Publish Subscribe pattern using Redis.
 
 ### database-mongodb
 
-Lesson that consisted on explaining how to connect to a MongoDB database using Mongoose as an ORM.
+Lesson that consisted on explaining how to connect to a MongoDB database using Mongoose as an ODM.
+
+### database-mysql
+
+Lesson that consisted on explaining how to connect to a MySQL database using Sequelize as an ORM.
 
 ### auth-db
 

@@ -12,9 +12,9 @@ const app = express();
 app.use(express.json());
 const port = 3000;
 
+app.use(authRoutes);
 app.use(userRoutes);
 app.use(taskRoutes);
-app.use(authRoutes);
 
 const MONGODB_URI = "mongodb://localhost:27017/arquitectura";
 mongoose
