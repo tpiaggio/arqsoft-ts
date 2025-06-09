@@ -40,3 +40,7 @@ Lesson that consisted on explaining how to integrate JWT and add auth to our app
 ### pubsub-db-auth
 
 Lesson that consisted on implementing the Pub/Sub exercise with auth and DB.
+
+### docker-app
+
+Lesson that consisted on implementing Docker compose and pm2

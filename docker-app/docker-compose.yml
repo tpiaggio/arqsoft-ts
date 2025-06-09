@@ -1,0 +1,61 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # MongoDB Service
+  mongodb:
+    image: mongo:latest # Use the latest official MongoDB image
+    container_name: express-mongo-db
+    ports:
+      - "27017:27017" # Map host port 27017 to container port 27017
+    volumes:
+      - mongo_data:/data/db # Persist MongoDB data in a named volume
+    environment:
+      # Optional: Set MongoDB root user and password for production environments
+      # - MONGO_INITDB_ROOT_USERNAME=admin
+      # - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_URI=mongodb://mongodb:27017/mydatabase # Connection string for the backend
+
+  # Redis Service
+  redis:
+    image: redis:latest # Use the latest official Redis image
+    container_name: express-redis
+    ports:
+      - "6379:6379" # Map host port 6379 to container port 6379
+    volumes:
+      - redis_data:/data # Persist Redis data in a named volume
+    command: redis-server --appendonly yes # Enable AOF persistence for Redis
+
+  # Express.js Backend Service (TypeScript)
+  backend:
+    build:
+      context: . # Build the image from the current directory (where Dockerfile is)
+      dockerfile: Dockerfile # Specify the Dockerfile to use
+    container_name: express-backend
+    ports:
+      - "3000:3000" # Map host port 3000 to container port 3000
+    # For production use with PM2, you usually don't mount source code for hot-reloading.
+    # The app is built inside the Dockerfile.
+    # If you need to debug or develop inside the container, you might uncomment these:
+    # volumes:
+    #   - ./src:/app/src
+    #   - ./package.json:/app/package.json
+    #   - ./tsconfig.json:/app/tsconfig.json
+    #   - /app/node_modules # Anonymous volume to prevent host node_modules from overwriting container's
+    environment:
+      # These environment variables are used by the application
+      - NODE_ENV=production # Set to production when using PM2 for final deployment
+      - PORT=3000
+      - MONGO_URI=mongodb://mongodb:27017/mydatabase
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mongodb # Ensure MongoDB starts before the backend
+      - redis # Ensure Redis starts before the backend
+    # IMPORTANT: There should be NO 'command:' line here.
+    # The Dockerfile's CMD ["npm", "start"] will be used to run PM2.
+
+# Define named volumes for data persistence
+volumes:
+  mongo_data:
+  redis_data:
